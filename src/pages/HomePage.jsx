@@ -3,10 +3,10 @@ import Navbar from '../components/layout/Navbar';
 import HeroSection from '../components/home/HeroSection';
 
 import FaqAccordion from '../components/home/FaqAccordion';
-import Footer from '../components/layout/Footer';
 import ScrollToTop from '../components/common/ScrollToTop';
 import FeatureCard from '../components/home/FeatureCard';
 import SignUpAd from '../components/home/SignUpAd';
+import PricingSection from '../components/home/PricingSection';
 
 export default function HomePage() {
   return (
@@ -22,7 +22,8 @@ export default function HomePage() {
 
       <SignUpAd />
       <FaqAccordion />
-      <Footer />
+      <PricingSection />
+
       <ScrollToTop />
     </div>
   );
