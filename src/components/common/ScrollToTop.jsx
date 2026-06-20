@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react';
 
 export default function ScrollToTop() {
@@ -6,26 +6,21 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      setIsVisible(window.scrollY > 400);
+      if (window.scrollY > 400) setIsVisible(true);
+      else setIsVisible(false);
     };
     window.addEventListener('scroll', toggleVisibility);
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  if (!isVisible) return null;
 
   return (
-    <>
-      {isVisible && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 p-3 bg-brand-cyan text-white rounded-full shadow-xl hover:bg-blue-600 transition-all transform hover:scale-110 z-50 animate-bounce cursor-pointer"
-        >
-          <ArrowUp size={24} />
-        </button>
-      )}
-    </>
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      className="fixed bottom-6 right-6 p-3 bg-[#1e3eb5] text-white rounded-full shadow-xl hover:bg-[#163e85] transition-all duration-200 z-50 cursor-pointer"
+    >
+      <ArrowUp size={20} />
+    </button>
   );
 }

@@ -11,12 +11,6 @@ export const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.12
-    }
+    transition: { staggerChildren: 0.15 }
   }
-};
-
-export const hoverScale = {
-  hover: { scale: 1.03, y: -4, transition: { duration: 0.2 } }
 };
