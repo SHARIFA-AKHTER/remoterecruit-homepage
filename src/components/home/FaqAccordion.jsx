@@ -55,6 +55,11 @@ export default function FaqAccordion() {
             );
           })}
         </div>
+        <div className="mt-12">
+          <button className="border border-slate-300 hover:border-slate-400 bg-white text-slate-700 font-semibold px-6 py-3 rounded-2xl shadow-sm transition-all duration-200 text-sm cursor-pointer">
+            More Questions
+          </button>
+        </div>
       </div>
     </section>
   );
