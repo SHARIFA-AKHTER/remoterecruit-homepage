@@ -1,28 +1,47 @@
-
 import { ArrowRight, Search, Bell, CheckSquare, Square } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { fadeInUp } from '../../utils/motionVariants';
 
 export default function SignUpAd() {
   return (
     <section className="py-20 bg-linear-to-br from-[#eff6ff] via-[#f5f3ff] to-[#e0e7ff] relative overflow-hidden">
       
-      <div className="absolute top-12 left-[25%] w-12 h-12 bg-amber-400 rounded-full blur-[2px] opacity-80 hidden md:block"></div>
-      <div className="absolute bottom-12 right-[35%] w-6 h-6 bg-blue-600 rounded-full blur-[1px] opacity-80 hidden md:block"></div>
+      {/* Decorative Floating Circles */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.5 }}
+        whileInView={{ opacity: 0.8, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="absolute top-12 left-[25%] w-12 h-12 bg-amber-400 rounded-full blur-[2px] hidden md:block"
+      ></motion.div>
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 0.8, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="absolute bottom-12 right-[35%] w-6 h-6 bg-blue-600 rounded-full blur-[1px] hidden md:block"
+      ></motion.div>
       <div className="absolute right-[-100px] top-[-50px] w-[400px] h-[400px] bg-purple-300/20 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* ================= LEFT SIDE: RICH DASHBOARD MOCKUP ================= */}
-          <div className="lg:col-span-7 w-full flex justify-center lg:justify-start">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInUp}
+            className="lg:col-span-7 w-full flex justify-center lg:justify-start"
+          >
             <div className="w-full max-w-[620px] bg-white rounded-3xl shadow-[0_20px_50px_rgba(30,62,181,0.08)] border border-slate-100 flex h-[400px] overflow-hidden">
               
+              {/* Sidebar */}
               <div className="w-16 sm:w-20 bg-[#1e3eb5] flex flex-col items-center py-6 justify-between shrink-0 text-white/50">
                 <div className="space-y-6 w-full flex flex-col items-center">
-           
                   <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center font-bold text-white text-xs mb-4">
                     RR
                   </div>
-              
                   <div className="w-full flex justify-center border-l-4 border-white text-white py-1">
                     <div className="w-5 h-5 rounded bg-white/20"></div>
                   </div>
@@ -32,9 +51,10 @@ export default function SignUpAd() {
                 <div className="w-5 h-5 rounded bg-white/10"></div>
               </div>
 
-            
+              {/* Main Content Area */}
               <div className="flex-1 bg-[#f8fafc] p-4 sm:p-6 flex flex-col overflow-hidden">
-      
+                
+                {/* Dashboard Top Header */}
                 <div className="flex justify-between items-center mb-5">
                   <div>
                     <span className="text-[10px] font-medium text-slate-400 block">Welcome Max</span>
@@ -53,7 +73,7 @@ export default function SignUpAd() {
                   </div>
                 </div>
 
-                
+                {/* Filter Badges */}
                 <div className="flex gap-1.5 overflow-x-auto pb-1.5 scrollbar-none shrink-0">
                   {['UI/UX', 'Front End', 'Back End', 'Data Science', 'Sales'].map((tab, idx) => (
                     <span key={idx} className={`text-[9px] font-bold px-3 py-1 rounded-full whitespace-nowrap ${idx === 0 ? 'bg-[#1e3eb5] text-white' : 'bg-white text-slate-500 border border-slate-200'}`}>
@@ -62,20 +82,23 @@ export default function SignUpAd() {
                   ))}
                 </div>
 
-            
+                {/* Grid Content */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-3 flex-1 overflow-hidden">
                   
-           
+                  {/* Job List Column */}
                   <div className="sm:col-span-2 space-y-2.5 overflow-y-auto pr-1 scrollbar-none">
                     <span className="text-[10px] font-bold text-slate-400 block uppercase tracking-wider">Recent Jobs</span>
                     
-           
                     <div className="bg-white border border-slate-200/60 p-3 rounded-xl shadow-sm">
                       <span className="text-[8px] text-slate-400 font-semibold block mb-0.5">Remote • Full-time</span>
                       <h4 className="text-[10px] font-bold text-slate-800 leading-tight">Senior UI/UX Designer needed for ongoing support</h4>
                     </div>
 
-        
+                    <div className="bg-white border border-slate-200/60 p-3 rounded-xl shadow-sm">
+                      <span className="text-[8px] text-slate-400 font-semibold block mb-0.5">Remote • Full-time</span>
+                      <h4 className="text-[10px] font-bold text-slate-800 leading-tight">Senior UI/UX Designer needed for ongoing support</h4>
+                    </div>
+
                     <div className="bg-[#1a365d] text-white p-3 rounded-xl shadow-md border border-blue-900/40">
                       <div className="flex items-center gap-1.5 mb-1.5">
                         <div className="w-4 h-4 rounded bg-white/20 flex items-center justify-center text-[8px] font-bold">T</div>
@@ -88,7 +111,7 @@ export default function SignUpAd() {
                     </div>
                   </div>
 
-        
+                  {/* Sidebar Filters Column */}
                   <div className="border-l border-slate-200/80 pl-3 space-y-3 hidden sm:block">
                     <div>
                       <span className="text-[10px] font-bold text-slate-700 block mb-2">Filter</span>
@@ -114,10 +137,16 @@ export default function SignUpAd() {
 
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* ================= RIGHT SIDE: CTA CONTENT BLOCK ================= */}
-          <div className="lg:col-span-5 space-y-6 text-center lg:text-left">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="lg:col-span-5 space-y-6 text-center lg:text-left"
+          >
             <span className="text-sm font-bold text-[#1e3eb5] uppercase tracking-wider block">
               Are you ready?
             </span>
@@ -136,7 +165,7 @@ export default function SignUpAd() {
                 Get Started
               </button>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

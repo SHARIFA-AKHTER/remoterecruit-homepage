@@ -1,4 +1,3 @@
-
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 import { faqData } from '../../data/faqData';
@@ -14,12 +13,20 @@ export default function FaqAccordion() {
   return (
     <section id="faq" className="py-20 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        
+        {/* Entrance Animation for Header Block */}
+        <motion.div 
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          className="text-center mb-12"
+        >
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-4 flex items-center justify-center gap-2">
             <HelpCircle className="text-brand-cyan" size={32} /> Frequently Asked Inquiries
           </h2>
           <p className="text-slate-600">Common structural and technical inquiries regarding our execution matrix.</p>
-        </div>
+        </motion.div>
 
         <div className="space-y-4">
           {faqData.map((faq, index) => {
@@ -44,6 +51,7 @@ export default function FaqAccordion() {
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.25, ease: "easeInOut" }}
+                      className="overflow-hidden" // Prevents layout snapping or jankiness during collapse/expansion
                     >
                       <div className="p-6 bg-white border-t border-slate-100 text-slate-600 leading-relaxed">
                         {faq.answer}
@@ -55,6 +63,7 @@ export default function FaqAccordion() {
             );
           })}
         </div>
+        
         <div className="mt-12">
           <button className="border border-slate-300 hover:border-slate-400 bg-white text-slate-700 font-semibold px-6 py-3 rounded-2xl shadow-sm transition-all duration-200 text-sm cursor-pointer">
             More Questions
