@@ -1,11 +1,12 @@
 
 import Navbar from '../components/layout/Navbar';
 import HeroSection from '../components/home/HeroSection';
-import DualCtaBanner from '../components/home/DualCtaBanner';
+
 import FaqAccordion from '../components/home/FaqAccordion';
 import Footer from '../components/layout/Footer';
 import ScrollToTop from '../components/common/ScrollToTop';
 import FeatureCard from '../components/home/FeatureCard';
+import SignUpAd from '../components/home/SignUpAd';
 
 export default function HomePage() {
   return (
@@ -19,7 +20,7 @@ export default function HomePage() {
       {/* Spacer zone to handle card translation overflow height boundaries */}
       <div className="h-16 bg-white"></div>
 
-      <DualCtaBanner />
+      <SignUpAd />
       <FaqAccordion />
       <Footer />
       <ScrollToTop />

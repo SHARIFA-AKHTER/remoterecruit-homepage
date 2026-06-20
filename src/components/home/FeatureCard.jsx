@@ -1,5 +1,6 @@
 
 import { FeatureOne } from './FeatureOne';
+import { FeatureThree } from './FeatureThree';
 import { FeatureTwo } from './FeatureTwo';
 
 export default function FeatureCard() {
@@ -7,6 +8,7 @@ export default function FeatureCard() {
     <>
       <FeatureOne />
       <FeatureTwo />
+      <FeatureThree/>
     </>
   );
 }
