@@ -2,7 +2,7 @@
 
 A pixel-perfect, highly responsive, and animated implementation of the **RemoteRecruit - Features** landing page, developed based on the provided Figma design guidelines. Built under a strict 48-hour timeline using modern frontend architecture and cutting-edge build tools.
 
-📌 **Live Deployment:** [👉 Live Demo Link Here](https://your-deployed-project-link.vercel.app)  
+📌 **Live Deployment:** [👉 Live Demo Link Here](https://remoterecruit-homepage.vercel.app)  
 📌 **Design Reference:** [Figma File](https://www.figma.com/design/EtejDtLu3wavBclhHY6JNa/Design?node-id=1-131&t=VHcwSbDXAx7tqVMf-0)
 
 ---
